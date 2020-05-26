@@ -1,15 +1,10 @@
 # import comet_ml in the top of your file
-from comet_ml import Experiment, OfflineExperiment
+from comet_ml import Experiment
     
-# Add the following code anywhere in your machine learning file
-# experiment = Experiment(api_key="NS98Kn8X5OBW4OJgNA9rtsbld", 
-#                         project_name="test-project", workspace="kstoufel")
 
-# experiment = Experiment(api_key="NS98Kn8X5OBW4OJgNA9rtsbld",
-#                         project_name="projection-comparison", workspace="kstoufel")
+experiment = Experiment(api_key="KEY",
+                        project_name="PROJECT_NAME", workspace="WORKSPACE")
 
-
-experiment = OfflineExperiment(..., offline_directory="/content/gdrive/My Drive/projection_diploma/experiments")
 
 import os
 import logging
