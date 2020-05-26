@@ -49,21 +49,13 @@ class TrainProjectionNetConfig(TrainConfig):
         self,
         batch_size: int,
         eval_batch_size: int,
-        epochs: int,
-        T: int,
-        D: int,
-        std: float,
-        hidden_dims: Optional[List[int]] = None
+        epochs: int
     ):
         super().__init__(
             batch_size=batch_size,
             eval_batch_size=eval_batch_size,
             epochs=epochs
             )
-        self.T = T
-        self.D = D
-        self.std = std
-        self.hidden_dims = hidden_dims
 
 
 class TrainAdamOptimizerConfig(object):
@@ -77,4 +69,42 @@ class TrainAdamOptimizerConfig(object):
         self.epsilon = epsilon
 
 
+class ProjectionNetConfig(object):
+    def __init__(
+        self,
+        T: int,
+        D: int,
+        std: float,
+        trainable_projection: Optional[bool] = False,
+        hidden_dims: Optional[List[int]] = None
+    ):
+        self.T = T
+        self.D = D
+        self.std = std
+        self.hidden_dims = hidden_dims
+        self.trainable_projection = trainable_projection
 
+
+class SGGNNetConfig(ProjectionNetConfig):
+    def __init__(
+        self,
+        T: int,
+        D: int,
+        std: float,
+        num_word_grams: int,
+        num_char_grams: int,
+        word_ngram_range: Tuple[int, int],
+        char_ngram_range: Tuple[int, int],
+        trainable_projection: Optional[bool] = False,
+        hidden_dims: Optional[List[int]] = None
+    ):
+        super().__init__(
+            T, D, std,
+            trainable_projection=trainable_projection,
+            hidden_dims=hidden_dims
+            )
+        
+        self.num_word_grams = num_word_grams
+        self.num_char_grams = num_char_grams
+        self.word_ngram_range = word_ngram_range
+        self.char_ngram_range = char_ngram_range

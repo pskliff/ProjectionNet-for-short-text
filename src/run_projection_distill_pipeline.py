@@ -2,8 +2,8 @@
 from comet_ml import Experiment
     
 # Add the following code anywhere in your machine learning file
-experiment = Experiment(api_key="", 
-                        project_name="", workspace="")
+experiment = Experiment(api_key="NS98Kn8X5OBW4OJgNA9rtsbld", 
+                        project_name="test-project", workspace="kstoufel")
 
 import os
 import logging
@@ -224,7 +224,7 @@ def main():
     print("\n\n")
     print(model._model.summary())
 
-
+    
     model_path = os.path.join(basic_params['models_path'], 'projections_distill')
 
     if isinstance(model_params['hidden_dims'], list):
@@ -237,7 +237,7 @@ _{basic_params['task']}\
 _{basic_params['teacher_name']}\
 __T_{model_params['T']}_D_{model_params['D']}_std_{model_params['std']}\
 _HD_{phd}\
-__DT_{datetime.datetime.now().strftime('%Y_%m_%d_%H_%M')}.h5"
+__DT_{datetime.datetime.now().strftime('%Y_%m_%d_%H_%M')}"
     
     model_filepath = os.path.join(model_path,  model_name)
     model.save(model_filepath)

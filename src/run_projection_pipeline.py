@@ -2,8 +2,8 @@
 from comet_ml import Experiment
     
 # Add the following code anywhere in your machine learning file
-experiment = Experiment(api_key="", 
-                        project_name="", workspace="")
+experiment = Experiment(api_key="NS98Kn8X5OBW4OJgNA9rtsbld", 
+                        project_name="test-project", workspace="kstoufel")
 
 import os
 import logging
