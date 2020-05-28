@@ -48,16 +48,6 @@ python3 run_projection_pipelines.py --proj_path=<path_to_project>\
  --adam_epsilon=1e-08
 ```
 
-## Evaluation
-
-To evaluate my model on ImageNet, run:
-
-```eval
-python eval.py --model-file mymodel.pth --benchmark imagenet
-```
-
-> 📋Describe how to evaluate the trained models on benchmarks reported in the paper, give commands that produce the results (section below).
-
 ## Pre-trained Models
 
 You can download pretrained models here:
